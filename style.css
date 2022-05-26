@@ -1,0 +1,133 @@
+/*<!--In the name of kindly generous ALLAH-->
+<!--Thanks ALLAH-->*/
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+*{
+    font-family:'Varela Round',cursive;
+}
+
+body{
+    /*you can change theme just with change these below variable colors*/
+    /*focus-color   : color of any that will be focussed very i.e. texts*/
+    /*unfocus-color : color of any that will not be focussed mostly i.e. background*/
+    /*--color : r , g , b *//*will be passed in rgb()/rgba() structure*/
+    --focus-color:0,255,255;
+    --unfocus-color:20, 20, 20;
+
+    --a:9;
+    background-color:rgb(var(--unfocus-color));
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin:0;
+    min-height:100vh;
+    gap:20px;
+}
+
+.background{
+    top:0;
+    left:0;
+    border:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+.q_cont{
+    margin-top:20px;
+    margin-bottom:20px;
+    width:80%;
+    background-color:rgba(var(--focus-color),.3);
+    padding:10px;
+    border-radius:10px;
+    max-width:500px;
+    box-shadow:0 0 20px rgb(var(--unfocus-color));
+    z-index:2;
+}
+
+.q_cont .question{
+    padding:10px;
+}
+
+.q_cont .question .title{
+    text-align:center;
+    background-color:rgba(var(--unfocus-color),.5);
+    padding:10px;
+    color:rgb(var(--focus-color));
+    border-radius:10px;
+    margin-top:0;
+    backdrop-filter:blur(4px);
+}
+
+.q_cont .question .description{
+    min-height:50px;
+    background-color:rgba(var(--unfocus-color),.7);
+    padding:10px;
+    color:rgb(var(--focus-color));
+    border-radius:10px;
+    margin-top:0;
+    backdrop-filter:blur(4px);
+    border-left:10px solid rgb(var(--focus-color));
+    white-space:pre-line;
+    max-height:300px;
+
+    overflow:auto;
+}
+.q_cont .question .description::-webkit-scrollbar {
+    width:20px;
+}
+.q_cont .question .description::-webkit-scrollbar-thumb{
+    background-color:rgba(var(--focus-color),.3);
+    border-radius:100px;
+}
+.q_cont .question .description::-webkit-scrollbar-thumb:hover{
+    background-color:rgba(var(--focus-color),.4);
+}
+
+
+.q_cont .question .lang{
+    top:5px;
+    right:5px;
+    position:relative;
+    text-align:center;
+    height:20px;
+    width:50px;
+    margin:auto;
+    margin-bottom:-20px;
+    margin-right:0px;
+    background-color:rgb(var(--focus-color));
+    color:rgb(var(--unfocus-color));
+    border-radius:10px;
+    box-shadow:0 0 10px rgb(var(--unfocus-color)),0 0 10px rgb(var(--unfocus-color));
+    z-index:2;
+    filter:opacity(.3);
+}
+
+.q_cont .choices ul{
+    list-style:none;
+    padding-left:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:0;
+    padding:10px;
+}
+
+.q_cont .choices ul li{
+    box-sizing:border-box;
+    padding:10px;
+    border-radius:10px;
+    min-width:200px;
+    width:calc(50% - 50px);
+    flex-grow:1;
+    background-color:rgb(var(--focus-color));
+    color:rgb(var(--unfocus-color));
+    border-radius:10px;
+}
+.q_cont .choices ul li:active{
+    color:rgb(var(--focus-color));
+    background-color:rgba(var(--unfocus-color),.2);
+}
