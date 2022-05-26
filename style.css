@@ -106,7 +106,12 @@ body{
     filter:opacity(.3);
 }
 
-.q_cont .choices ul{
+.q_cont .choices{
+    --incorrect-answer-bg-color:255, 94, 108;
+    --incorrect-answer-color:var(--unfocus-color);
+    --correct-answer-bg-color:154, 205, 50;
+    --correct-answer-color:var(--unfocus-color);
+
     list-style:none;
     padding-left:0;
     display:flex;
@@ -116,7 +121,7 @@ body{
     padding:10px;
 }
 
-.q_cont .choices ul li{
+.q_cont .choices .choice{
     box-sizing:border-box;
     padding:10px;
     border-radius:10px;
@@ -127,6 +132,20 @@ body{
     color:rgb(var(--unfocus-color));
     border-radius:10px;
 }
+
+.correct_choice{
+    background-color:rgba( var(--correct-answer-bg-color) ,1) !important;
+    color:rgb( var(--correct-answer-color)) !important;
+    box-shadow: 0 0 5px rgba(var(--correct-answer-bg-color));
+}
+.incorrect_choice{
+    background-color:rgba( var(--incorrect-answer-bg-color) ,1) !important;
+    color:rgb( var(--incorrect-answer-color) ) !important;
+    box-shadow: 0 0 5px rgba(var(--incorrect-answer-bg-color));
+}
+
+
+
 .q_cont .choices ul li:active{
     color:rgb(var(--focus-color));
     background-color:rgba(var(--unfocus-color),.2);

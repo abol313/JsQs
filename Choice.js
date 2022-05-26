@@ -4,7 +4,11 @@ class Choice{
     }
 
     getAnswer(){
-        return thos.answer
+        return this.answer
+    }
+    setAnswer(answer){
+        this.answer = answer
+        return this
     }
     
     checkAnswer(answer,strictly=false){

@@ -1,66 +1,51 @@
-class Quiz{
-    constructor(quiz){
-        this.quiz =  quiz
-       
-        let resName = 'result0936371602174'
-        let result0936371602174 = ''
-        let resFrom = /console.log\((.*)\)/g
-        quiz = quiz.replaceAll(resFrom,resName+" += ( $1 + \"\\n\" )")
-        // console.log("#"+quiz)
-        eval(quiz)
-        this.answer = result0936371602174
-
-    }
-    checkAnswer(answer,strictly=false){
-        if(!strictly)
-            return this.answer.replaceAll(/\s/g,'') == answer.replaceAll(/\s/g,'') 
-
-        return this.answer == answer
-    }
-}
-class SmartQuiz{
-    constructor(quiz){
-        this.quiz = quiz
+class SmartQuiz extends Quiz{
+    constructor(question,mainChoiceIndex=0){
+        super(null,mainChoiceIndex)
+        this.question = question
         this.magicPattern = /\$(?<type>.*?)\{(?<content>.*?)\}/g
+        this.title = "Smart Quiz"
+        this.prepareChoices()
     }
 
     prepareChoices(){
         let choiceIndex = 0
-        let quizzes=[],q,pq
+        let questions=[],q,pq
         while(q = this.exeAll(choiceIndex))
             if(pq===undefined || !q.checkAnswer(pq.answer)){
                 //console.log(q)
-                quizzes.push(pq=q)
+                questions.push(pq=q)
                 choiceIndex++
             }
-        return quizzes
+        this.setChoices(questions)
+        this.setDescription(this.getMainChoice().getQuestion())
+        return this
     }
 
     exeAll(choiceIndex){
         let pattern = this.magicPattern
         //return pattern.exec('$int{3:4|5:3}')
         let match
-        let quiz = this.quiz
-        // console.group("executing magic..."+quiz)
+        let question = this.question
+        // console.group("executing magic..."+question)
 
-        while( match = pattern.exec(quiz) ){
+        while( match = pattern.exec(question) ){
             let magic = match[0]
             let type = match.groups.type
             let content = match.groups.content
             let holder = this.exeMagic(type,content,choiceIndex)
             if(holder===undefined)return undefined
-            quiz = this.stringReplaceAmong(
-                    quiz,
+            question = this.stringReplaceAmong(
+                    question,
                     match.index,
                     match.index+magic.length-1,
                     holder
                 )
-            // console.log(`${quiz} type:${type} content:${content} exec:${this.exeMagic(type,content,choiceIndex)}`)
+            // console.log(`${question} type:${type} content:${content} exec:${this.exeMagic(type,content,choiceIndex)}`)
             pattern.lastIndex = match.index 
         }
         // console.groupEnd()
 
-        return new Quiz(quiz);
+        return new SmartChoice(question);
     }
 
     exeMagic(type,content,choiceIndex=0){
@@ -98,7 +83,7 @@ class SmartQuiz{
 }
 
 
-let quiz = `
+let question = `
 console.log('$string{a|ab|abc|abcd}')
 for(let i = 0 ; i < $int{3:5|1:4|3:4|5:5} ; i++){
     console.log(i)

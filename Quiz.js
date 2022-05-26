@@ -1,7 +1,9 @@
 class Quiz{
-    construct(choices,mainChoiceIndex=0){
+    constructor(choices,mainChoiceIndex=0){
         this.choices=choices
         this.mainChoiceIndex = mainChoiceIndex
+        this.title = "Quiz"
+        this.description = "Description"
     }
 
     setTitle(title){
@@ -20,6 +22,10 @@ class Quiz{
         return this.description
     }
 
+    setChoices(choices){
+        this.choices = choices
+        return this
+    }
     getChoice(index){
         return this.choices[index]
     }
@@ -27,17 +33,26 @@ class Quiz{
     getMainChoice(){
         return this.getChoice(this.mainChoiceIndex)
     }
+    getMainChoiceIndex(){
+        return this.mainChoiceIndex
+    }   
 
-    //answerCallback as answerCallback(element,isMainChoice)
+    setMainChoiceIndex(mainChoiceIndex){
+        this.mainChoiceIndex = mainChoiceIndex
+        return this
+    }
+
+    //answerCallback as answerCallback(isMainChoice,element)
     renderChoicesUI(titleEl,descriptionEl,choicesEls,answerCallback){
-        for(let i = 0; i < choicesButtons & i < this.choices.length; i++){
+        for(let i = 0; i < choicesEls.length & i < this.choices.length; i++){
+
             let buttonEl = choicesEls[i]
             let choice = this.choices[i]
-            buttonEl.innerText = choice.answer
+            buttonEl.innerText = choice.getAnswer()
             titleEl.innerText = this.getTitle()
             descriptionEl.innerText = this.getDescription()
 
-            buttonEl.addEventListener("click",function(){ answerCallback(this,i === this.mainChoiceIndex) })
+            buttonEl.addEventListener("click",()=>answerCallback(i === this.mainChoiceIndex,buttonEl))
         }
         return this
     }
