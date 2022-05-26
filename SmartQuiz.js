@@ -6,15 +6,15 @@ class Quiz{
         let result0936371602174 = ''
         let resFrom = /console.log\((.*)\)/g
         quiz = quiz.replaceAll(resFrom,resName+" += ( $1 + \"\\n\" )")
-        console.log("#"+quiz)
+        // console.log("#"+quiz)
         eval(quiz)
         this.answer = result0936371602174
 
     }
     checkAnswer(answer,strictly=false){
-        if(strictly)
-            return this.answer.replaceAll(/\s/g,'') == this.answer.replaceAll(/\s/g,'') 
-        
+        if(!strictly)
+            return this.answer.replaceAll(/\s/g,'') == answer.replaceAll(/\s/g,'') 
+
         return this.answer == answer
     }
 }
@@ -24,8 +24,16 @@ class SmartQuiz{
         this.magicPattern = /\$(?<type>.*?)\{(?<content>.*?)\}/g
     }
 
-    exprtQuizzes(){
-
+    prepareChoices(){
+        let choiceIndex = 0
+        let quizzes=[],q,pq
+        while(q = this.exeAll(choiceIndex))
+            if(pq===undefined || !q.checkAnswer(pq.answer)){
+                console.log(q)
+                quizzes.push(pq=q)
+                choiceIndex++
+            }
+        return quizzes
     }
 
     exeAll(choiceIndex){
