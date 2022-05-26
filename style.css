@@ -142,8 +142,15 @@ body{
     background-color:rgba( var(--incorrect-answer-bg-color) ,1) !important;
     color:rgb( var(--incorrect-answer-color) ) !important;
     box-shadow: 0 0 5px rgba(var(--incorrect-answer-bg-color));
+    animation:anim_incorrect 1s ;
 }
-
+@keyframes anim_incorrect{
+    0%{transform:translate(3px);}
+    20%{transform:translate(-3px);}
+    40%{transform:translate(3px);}
+    60%{transform:translate(-3px);}
+    80%{transform:translate(0px);}
+}
 
 
 .q_cont .choices ul li:active{
