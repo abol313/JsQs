@@ -29,7 +29,7 @@ class SmartQuiz{
         let quizzes=[],q,pq
         while(q = this.exeAll(choiceIndex))
             if(pq===undefined || !q.checkAnswer(pq.answer)){
-                console.log(q)
+                //console.log(q)
                 quizzes.push(pq=q)
                 choiceIndex++
             }
