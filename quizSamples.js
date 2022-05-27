@@ -69,12 +69,12 @@ function passQuizObj(quizObj) {
     )
 }
 function nextQuiz() {
-    if (quizQueue.length === 0) return
-    passQuizObj(quizNow = quizQueue.shift())
+    if (quizQueue.length === 0)return 
+    return passQuizObj(quizNow = quizQueue.shift())
 }
 
 function reQuiz() {
-    passQuizObj(quizNow)
+    return passQuizObj(quizNow)
 }
 
 
@@ -260,4 +260,5 @@ quizQueue.push(
 )
 */
 //passQuizObj(quizQueue[1])
-nextQuiz()
+if(!nextQuiz())
+    alert('ended. thank you to enjoy ;)')
