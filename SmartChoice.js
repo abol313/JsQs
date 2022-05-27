@@ -5,8 +5,14 @@ class SmartChoice extends Choice{
         this.question = question
         let resName = 'result0936371602174'
         let result0936371602174 = ''
-        let resFrom = /console\s*?\.log\((.*)\)/g
+        let resFrom
+        resFrom = /confirm\((.*)\)/g
         question = question.replaceAll(resFrom,resName+" += ( $1 + \"\\n\" )")
+        resFrom = /console\s*?\.log\((.*)\)/g
+        question = question.replaceAll(resFrom,resName+" += ( $1 + \"\\n\" )")
+        resFrom = /alert\((.*)\)/g
+        question = question.replaceAll(resFrom,resName+" += ( $1 + \"\\n\" )")
+
         // console.log("#"+question)
         eval(question)
         this.setAnswer(result0936371602174)
