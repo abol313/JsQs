@@ -14,6 +14,7 @@ class SmartChoice extends Choice{
         question = question.replaceAll(resFrom,resName+" += ( $1 + \"\\n\" )")
 
         // console.log("#"+question)
+        // console.log('eval',eval(question))
         eval(question)
         this.setAnswer(result0936371602174)
     }

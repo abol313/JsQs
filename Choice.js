@@ -15,6 +15,6 @@ class Choice{
         if(!strictly)
             return this.answer.replaceAll(/\s/g,'') == answer.replaceAll(/\s/g,'') 
 
-        return this.answer == answer
+        return this.answer === answer
     }
 }

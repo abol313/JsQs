@@ -9,10 +9,15 @@ class SmartQuiz extends Quiz{
 
     prepareChoices(){
         let choiceIndex = 0
-        let questions=[],q,pq
+        let questions=[],q,pq=[]
         while(q = this.exeAll(choiceIndex))
-            if(pq===undefined || !q.checkAnswer(pq.answer)){
-                //console.log(q)
+            if(choiceIndex===0 || !q.checkAnswer(pq.answer,true)){
+                if(pq!=null)console.log(q.answer,pq.answer,"?",q.checkAnswer(pq.answer,true))
+                for(let smartChoice of questions){
+                    if(smartChoice.checkAnswer(q.answer,true))
+                        q=null
+                }
+                if(q===null)continue;
                 questions.push(pq=q)
                 choiceIndex++
             }
