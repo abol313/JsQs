@@ -12,10 +12,11 @@ class SmartQuiz extends Quiz{
         let questions=[],q,pq=[]
         while(q = this.exeAll(choiceIndex))
             if(choiceIndex===0 || !q.checkAnswer(pq.answer,true)){
-                if(pq!=null)console.log(q.answer,pq.answer,"?",q.checkAnswer(pq.answer,true))
+                //if(pq!=null)console.log(q.answer,pq.answer,"?",q.checkAnswer(pq.answer,true))
                 for(let smartChoice of questions){
-                    if(smartChoice.checkAnswer(q.answer,true))
-                        q=null
+                    if(smartChoice.checkAnswer(q.answer,true)){
+                        q=null;break
+                    }
                 }
                 if(q===null)continue;
                 questions.push(pq=q)
