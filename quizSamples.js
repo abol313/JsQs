@@ -21,7 +21,7 @@ function checkCallback(isCorrect, button) {
             reQuiz()
         }
         toggelable = true
-    }, 100)
+    }, 1000)
 
 
 }
@@ -307,7 +307,7 @@ quizQueue.push(
             const [,{name},] = props
 
             console.log(name)
-            
+
             //Yonus
             `
         ,choices:
