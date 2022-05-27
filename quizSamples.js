@@ -255,5 +255,5 @@ quizQueue.push(
     }
 )
 */
-passQuizObj(quizQueue[1])
-//nextQuiz()
+//passQuizObj(quizQueue[1])
+nextQuiz()
