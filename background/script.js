@@ -129,7 +129,7 @@ function end() {
     clearInterval(inter)
 }
 
-//start()
+start()
 
 function clear() {
     ctx.clearRect(0, 0, boomW, boomH)
