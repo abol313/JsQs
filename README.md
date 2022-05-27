@@ -67,19 +67,19 @@ ex>> smartQuiz.setTitle(title)</br>
 
 
 <hr/>
-#Question in smart
-#Magic
-Magics are in these formats:
-<strong>$type{choice1|choice2|choice3|choice4|...}</strong>
-<strong>Note! all of Magics in question must have same number of choices</strong>
-
-#Type
-there is only yet these formats and their own action:
-$int //choice: |min:max| (inclusive) returns a random integer
-$string //choice: |abcd| returns a shuffled string
-$list //choice: |[a,v,43,43]| returns a random value separated by comma
-
-<strong>Note! each choice will get processed different!</strong>
-
-
+#Question in smart<br/>
+#Magic<br/>
+Magics are in these formats:<br/>
+<strong>$type{choice1|choice2|choice3|choice4|...}</strong><br/>
+<strong>Note! all of Magics in question must have same number of choices</strong><br/>
+<br/>
+#Type<br/>
+there is only yet these formats and their own action:<br/>
+$int //choice: |min:max| (inclusive) returns a random integer<br/>
+$string //choice: |abcd| returns a shuffled string<br/>
+$list //choice: |[a,v,43,43]| returns a random value separated by comma<br/>
+<br/>
+<strong>Note! each choice will get processed different!</strong><br/>
+<br/>
+<br/>
 <hr/>
