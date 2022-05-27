@@ -1,3 +1,7 @@
+/*In the name f kindly generous ALLAH
+Thanks ALLAH*/
+
+
 class SmartChoice extends Choice{
     constructor(question){
         super(null)

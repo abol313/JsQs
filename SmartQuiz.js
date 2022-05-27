@@ -1,3 +1,5 @@
+/*In the name f kindly generous ALLAH
+Thanks ALLAH*/
 class SmartQuiz extends Quiz{
     constructor(question,mainChoiceIndex=0){
         super(null,mainChoiceIndex)

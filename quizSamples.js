@@ -1,3 +1,7 @@
+/*In the name f kindly generous ALLAH
+Thanks ALLAH*/
+
+
 let buttonsEl = document.querySelectorAll(".q_cont .choices .choice")
 let titleEl = document.querySelector(".q_cont .question .title")
 let descriptionEl = document.querySelector(".q_cont .question .description")

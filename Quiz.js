@@ -1,3 +1,6 @@
+/*In the name f kindly generous ALLAH
+Thanks ALLAH*/
+
 class Quiz{
     constructor(choices,mainChoiceIndex=0){
         this.choices=choices

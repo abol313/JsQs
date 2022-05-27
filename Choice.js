@@ -1,3 +1,7 @@
+
+/*In the name f kindly generous ALLAH
+Thanks ALLAH*/
+
 class Choice{
     constructor(answer){
         this.answer=answer
