@@ -69,7 +69,10 @@ function passQuizObj(quizObj) {
     )
 }
 function nextQuiz() {
-    if (quizQueue.length === 0)return 
+    if (quizQueue.length === 0) {
+        alert('ended. thank you to enjoy ;)')
+        return
+    }
     return passQuizObj(quizNow = quizQueue.shift())
 }
 
@@ -127,7 +130,7 @@ quizQueue.push(
         , choices:
             [
                 'ascending',
-                'descendind',
+                'descending',
                 'both',
                 'will not be sorted'
             ]
@@ -260,5 +263,4 @@ quizQueue.push(
 )
 */
 //passQuizObj(quizQueue[1])
-if(!nextQuiz())
-    alert('ended. thank you to enjoy ;)')
+nextQuiz()
