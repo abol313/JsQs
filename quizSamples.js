@@ -21,7 +21,7 @@ function checkCallback(isCorrect, button) {
             reQuiz()
         }
         toggelable = true
-    }, 1000)
+    }, 100)
 
 
 }
@@ -245,6 +245,101 @@ quizQueue.push(
         , correctChoice: 0
     }
 )
+
+quizQueue.push(
+    {
+        title:
+            'What will be the out put?'
+        ,description:
+            `const userData = [
+                ['username','miki'],
+                ['age',22]
+            ];
+
+            const obj = Object.fromEntries(userData)
+            console.log(obj)
+
+            //Elias kibret
+            `
+        ,choices:
+            [
+                "[{username: 'miki'}, {age: 22}]",
+                "{username: 'miki', age: 22}",
+                "[[username,'miki'], [age,22]]",
+                "{{username: 'miki'}, {age: 22}}",
+               
+            ]
+        ,correctChoice:1
+    }
+)
+
+quizQueue.push(
+    {
+        title:
+            'What does it?'
+        ,description:
+            `history.back();
+            //or
+            history.go(-1)
+            `
+        ,choices:
+            [
+                "go back to previous page",
+                "go back to previous history",
+                "go back to last page",
+                "go back to last history",
+            ]
+        ,correctChoice:0
+    }
+)
+
+quizQueue.push(
+    {
+        title:
+            'What will be the output?'
+        ,description:
+            `const props = [
+                {name:'$list{[John,Ali,Muhammad,Faxel]|[John,Ali,Muhammad,Faxel]|[John,Ali,Muhammad,Faxel]|[John,Ali,Muhammad,Faxel]}',age:$int{20:50|20:50|20:50|20:50}},
+                {name:'$list{[John,Ali,Muhammad,Faxel]|[John,Ali,Muhammad,Faxel]|[John,Ali,Muhammad,Faxel]|[John,Ali,Muhammad,Faxel]}',age:$int{20:50|20:50|20:50|20:50}},
+                {name:'$list{[John,Ali,Muhammad,Faxel]|[John,Ali,Muhammad,Faxel]|[John,Ali,Muhammad,Faxel]|[John,Ali,Muhammad,Faxel]}',age:$int{20:50|20:50|20:50|20:50}}
+            ]
+
+            const [,{name},] = props
+
+            console.log(name)
+            
+            //Yonus
+            `
+        ,choices:
+            [
+
+            ]
+        ,correctChoice:0
+    }
+)
+
+quizQueue.push(
+    {
+        title:
+            'Why to use this below?'
+        ,description:
+            `let language = (navigator.languages && navigator.languages[0]) ||
+            navigator.language || navigator.userLanguage;
+            console.log(language)
+
+            //Elias kibret
+            `
+        ,choices:
+            [
+                'to get the language of user',
+                'to get the language of browserUI',
+                'to get the preferred language of user',
+                'to get the language of server'
+            ]
+        ,correctChoice:1
+    }
+)
+
 
 /*
 quizQueue.push(
