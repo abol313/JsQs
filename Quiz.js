@@ -52,7 +52,7 @@ class Quiz{
             titleEl.innerText = this.getTitle()
             descriptionEl.innerText = this.getDescription()
 
-            buttonEl.addEventListener("click",()=>answerCallback(i === this.mainChoiceIndex,buttonEl))
+            buttonEl.onclick=(()=>answerCallback(i === this.mainChoiceIndex,buttonEl))
         }
         return this
     }
