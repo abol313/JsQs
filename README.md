@@ -2,7 +2,8 @@ In the name of kindly generous ALLAH
 Thanks ALLAH
 
 thank you ;)
-
+<a href="https://grand-tulumba-a1e558.netlify.app/" target="_blank">Try it! demo link</a>
+ 
 # JsQs
 # Quiz
 # SmartQuiz
