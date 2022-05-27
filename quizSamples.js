@@ -10,11 +10,11 @@ function checkCallback(isCorrect, button) {
     toggleChoiceButton(isCorrect, button)
     toggelable = false
     setTimeout(() => {
+        normalizeChoiceButtons()
         if (isCorrect) {
             nextQuiz()
         } else {
             reQuiz()
-            normalizeChoiceButtons()
         }
         toggelable = true
     }, 1000)
