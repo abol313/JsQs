@@ -249,7 +249,7 @@ quizQueue.push(
 quizQueue.push(
     {
         title:
-            'What will be the out put?'
+            'What will be the output?'
         ,description:
             `const userData = [
                 ['username','miki'],
